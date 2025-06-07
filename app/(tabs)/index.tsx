@@ -1,14 +1,41 @@
-import { StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { useRouter } from 'expo-router';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+export default function Index() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-export default function TabOneScreen() {
+  const handleLogin = () => {
+    if (!name || !email) {
+      Alert.alert('Erro', 'Por favor, preencha todos os campos.');
+      return;
+    }
+
+    router.push('/home');
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Text style={styles.title}>Login</Text>
+
+      <TextInput
+        placeholder="Nome"
+        value={name}
+        onChangeText={setName}
+        style={styles.input}
+      />
+
+      <TextInput
+        placeholder="E-mail"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+        style={styles.input}
+      />
+
+      <Button title="Entrar" onPress={handleLogin} />
     </View>
   );
 }
@@ -16,16 +43,22 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 24,
+    backgroundColor: '#FFF9F9',
   },
   title: {
-    fontSize: 20,
+    fontSize: 32,
+    marginBottom: 32,
+    color: "#2c3e50",
+    textAlign: 'center',
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 12,
+    marginBottom: 16,
+    borderRadius: 8,
   },
 });
