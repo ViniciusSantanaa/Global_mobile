@@ -25,7 +25,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </Link>
    
-      <Link href="/" asChild>
+      <Link href="/sobre" asChild>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Sobre Nós</Text>
         </TouchableOpacity>

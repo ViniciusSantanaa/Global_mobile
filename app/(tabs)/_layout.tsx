@@ -65,6 +65,22 @@ export default function Layout() {
                 },
               }}
             />
+
+    <Stack.Screen
+                  name="sobre"
+                  options={{
+                    title: 'FloodSafe',
+                    headerStyle: {
+                      backgroundColor: '#FFF9F9',
+                      height: 80,
+                    },
+                    headerTitleStyle: {
+                      color: '#2c3e50',
+                      fontSize: 30,
+                      fontWeight: 'bold',
+                    },
+                  }}
+                />
     </Stack>
   )
 }
