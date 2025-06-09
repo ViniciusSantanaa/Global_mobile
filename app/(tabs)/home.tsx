@@ -19,9 +19,9 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </Link>
 
-      <Link href="/" asChild>
+      <Link href="/dashboard" asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Buscar Moto</Text>
+          <Text style={styles.buttonText}>Nivel Água</Text>
         </TouchableOpacity>
       </Link>
    

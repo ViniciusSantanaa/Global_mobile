@@ -35,7 +35,7 @@ export default function Index() {
         style={styles.input}
       />
 
-      <Button title="Entrar" onPress={handleLogin} />
+      <Button title="Entrar" onPress={handleLogin} color="#2c3e50"/>
     </View>
   );
 }
